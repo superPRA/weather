@@ -1,8 +1,8 @@
 import React from "react";
-import MainWeatherInfo from "./miniPages/MainWeatherInfoSm";
-import HighlightsSm from "./miniPages/highlightsSm";
-import ForcastSm from "./miniPages/ForcastSm";
-import Mainmap from "./miniPages/MainmapSm";
+import MainWeatherInfo from "../components/miniPages/MainWeatherInfoSm";
+import HighlightsSm from "../components/miniPages/highlightsSm";
+import ForcastSm from "../components/miniPages/ForcastSm";
+import Mainmap from "../components/miniPages/MainmapSm";
 
 type Props = {};
 

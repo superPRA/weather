@@ -14,25 +14,26 @@ const icons = [
     icon: <RiApps2Line />,
     to: "/home",
   },
+
+  {
+    icon: <GiCircleClaws />,
+    to: "/weatherinfo",
+  },
   {
     icon: <RiMap2Line />,
-    to: "map",
+    to: "/map",
   },
   {
     icon: <IoLocationOutline />,
-    to: "location",
-  },
-  {
-    icon: <GiCircleClaws />,
-    to: "asda",
+    to: "/location",
   },
   {
     icon: <RxCalendar />,
-    to: "asdasa",
+    to: "/calender",
   },
   {
     icon: <AiOutlineSetting />,
-    to: "aff",
+    to: "/setting",
   },
 ];
 

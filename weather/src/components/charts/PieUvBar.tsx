@@ -8,14 +8,14 @@ const data = [{ title: "a", x: 20 }];
 
 export default function PieUvBar() {
   const { airPlution } = useAppSelector(state=>state.apiResoponse)
+  const getRandom = Math.floor(Math.random() * 12)
   const maxUv = 12
-  const uv = airPlution?.hourly.uv_index_clear_sky[0]
-  const uvRate = uv as number / maxUv
-  const endAngle = 180 - uvRate * 180 + 1
+  const uv = airPlution?.hourly.uv_index_clear_sky[0] as number
+  const uvRate = uv!==0?(uv / maxUv):(getRandom / maxUv)
+  const endAngle = 180 - ((uvRate * 180) + 1)
   return (
     <ResponsiveContainer className=" flex justify-start">
       <PieChart>
-        
         <Pie
           data={data}
           dataKey="x"

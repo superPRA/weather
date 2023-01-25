@@ -19,7 +19,8 @@ export default function useAxios({method,url,body=null}: props){
         axios({method, url, data:body})
             .then(res=>setResponse(res.data))
             .catch(err=>setError(err))
-            setLoading(false)
+            .finally(()=>setLoading(false))
+            
 
     },[url,method,body])
 

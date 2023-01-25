@@ -2117,6 +2117,11 @@
   dependencies:
     "@types/geojson" "*"
 
+"@types/luxon@^3.2.0":
+  "integrity" "sha512-lGmaGFoaXHuOLXFvuju2bfvZRqxAqkHPx9Y9IQdQABrinJJshJwfNCKV+u7rR3kJbiqfTF/NhOkcxxAFrObyaA=="
+  "resolved" "https://registry.npmjs.org/@types/luxon/-/luxon-3.2.0.tgz"
+  "version" "3.2.0"
+
 "@types/mime@*":
   "integrity" "sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA=="
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-3.0.1.tgz"
@@ -3265,6 +3270,11 @@
   "integrity" "sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w=="
   "resolved" "https://registry.npmjs.org/ci-info/-/ci-info-3.7.1.tgz"
   "version" "3.7.1"
+
+"cities.json@^1.1.16":
+  "integrity" "sha512-kg4KFT0kV3qALUGT5ESTP7opzZPeCHvATg3aYsOQEum3l4SzMtDtEfVMAfHjjwboy/0XdGpvDGN08Sj/59E+gg=="
+  "resolved" "https://registry.npmjs.org/cities.json/-/cities.json-1.1.16.tgz"
+  "version" "1.1.16"
 
 "cjs-module-lexer@^1.0.0":
   "integrity" "sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA=="
@@ -6642,6 +6652,11 @@
   "version" "6.0.0"
   dependencies:
     "yallist" "^4.0.0"
+
+"luxon@^3.2.1":
+  "integrity" "sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg=="
+  "resolved" "https://registry.npmjs.org/luxon/-/luxon-3.2.1.tgz"
+  "version" "3.2.1"
 
 "lz-string@^1.4.4":
   "integrity" "sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ=="
