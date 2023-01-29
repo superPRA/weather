@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import { activeCity, airPlution } from "../../types/apiTypes";
+import { activeCity, airPlution, newsBBC } from "../../types/apiTypes";
 import { weather } from "../../types/apiTypes";
 
 interface initialState {
@@ -20,7 +20,8 @@ interface initialState {
     };
   };
   mounths: string[];
-  weeks: string[]
+  weeks: string[];
+  news: newsBBC | null 
 }
 
 const initialState: initialState = {
@@ -95,7 +96,7 @@ const initialState: initialState = {
     "January",
     "February",
     "March",
-    " April",
+    "April",
     "May",
     "June",
     "July",
@@ -105,7 +106,8 @@ const initialState: initialState = {
     "November",
     "December",
   ],
-  weeks: ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  weeks: ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+  news: null
 };
 
 export const counterSlice = createSlice({
@@ -121,10 +123,14 @@ export const counterSlice = createSlice({
     setAirPlution: (state, actions: PayloadAction<airPlution>) => {
       state.airPlution = actions.payload;
     },
+    setNews: (state, actions: PayloadAction<newsBBC>)=>{
+      state.news = actions.payload
+      // console.log(state.news?.articles)
+    }
   },
 });
 
-export const { changeActiveCity, setWeather, setAirPlution } =
+export const { changeActiveCity, setWeather, setAirPlution, setNews } =
   counterSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type

@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosResponse, Method, } from "axios"
 import { useState, useEffect } from "react"
-import { airPlution, cityApiResponce, weather } from "../../types/apiTypes"
+import { activeCity, airPlution, city, cityApiResponce, newsBBC, weather } from "../../types/apiTypes"
 
 type props = {
     method: Method,
@@ -10,7 +10,7 @@ type props = {
 
 
 export default function useAxios({method,url,body=null}: props){
-    const [response, setResponse] =  useState<weather | airPlution>()
+    const [response, setResponse] =  useState<weather | airPlution | newsBBC | city>()
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<null | AxiosError>(null)
     url = url.replaceAll("%2C", ",")

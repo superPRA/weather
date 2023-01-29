@@ -2,44 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.GRAIDIENT {
-  background: rgb(91, 91, 91);
-  background: -moz-linear-gradient(
-    124deg,
-    rgba(91, 91, 91, 1) 0%,
-    rgba(57, 57, 57, 1) 12%,
-    rgba(52, 53, 54, 1) 20%,
-    rgba(25, 27, 31, 1) 41%
-  );
-  background: -webkit-linear-gradient(
-    124deg,
-    rgba(91, 91, 91, 1) 0%,
-    rgba(57, 57, 57, 1) 12%,
-    rgba(52, 53, 54, 1) 20%,
-    rgba(25, 27, 31, 1) 41%
-  );
-  background: linear-gradient(
-    124deg,
-    rgba(91, 91, 91, 1) 0%,
-    rgba(57, 57, 57, 1) 12%,
-    rgba(52, 53, 54, 1) 20%,
-    rgba(25, 27, 31, 1) 41%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b5b5b",endColorstr="#191b1f",GradientType=1);
-}
 .scrollNone::-webkit-scrollbar {
   width: 0;
 }
-table,
-th,
-td {
-  @apply border border-slate-400 border-collapse text-black text-center
+
+.BOX{
+    @apply bg-box-light dark:bg-box-dark transition-all rounded-3xl bg-cover
 }
-tr, th, td{
-    @apply bg-white
-}
-tr:nth-child(even),
-th:nth-child(even),
-td:nth-child(even) {
-    @apply bg-slate-300
+.BOX > div{
+    @apply backdrop-blur-md rounded-3xl h-full
 }

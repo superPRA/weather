@@ -7,6 +7,8 @@ import { RxCalendar } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 import uuid from "react-uuid";
+import { BsMenuApp } from "react-icons/bs";
+import { BiMenu } from "react-icons/bi";
 
 type Props = {};
 const icons = [
@@ -17,7 +19,7 @@ const icons = [
 
   {
     icon: <GiCircleClaws />,
-    to: "/weatherinfo",
+    to: "/mainWeather",
   },
   {
     icon: <RiMap2Line />,
@@ -42,9 +44,9 @@ export default function Nav({}: Props) {
     <>
       <div
         className={` lg:rounded-2xl transition-all 
-        overflow-hidden  bg-cover flex-grow`}
+        overflow-hidden hidden sm:block bg-cover flex-grow`}
       >
-        <div className="lg:block flex justify-around backdrop-blur-md sm:backdrop-blur-0 h-full py-2 ">
+        <div className="lg:block flex  justify-around backdrop-blur-md sm:backdrop-blur-0 h-full py-2 ">
           {icons.map((item) => {
             return (
               <NavLink
@@ -61,6 +63,7 @@ export default function Nav({}: Props) {
             );
           })}
         </div>
+        
       </div>
     </>
   );

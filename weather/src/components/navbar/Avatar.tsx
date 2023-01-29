@@ -21,6 +21,7 @@ export default function Avatar({}: Props) {
                 ? dispatch(changeTheme("light"))
                 : dispatch(changeTheme("dark"))
             }
+            checked={theme === "light"}
           />
           {/*sun */}
           <BsSun className="swap-on " />

@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../redux/hooks";
 import { daily, weather } from "../../types/apiTypes";
 import { setDay } from "../../redux/global/global";
+import { DateTime } from "luxon";
 
 export default function useSetDay() {
   const { loading, isDay } = useAppSelector((state) => state.global);
@@ -10,11 +11,10 @@ export default function useSetDay() {
   if (!loading) {
     if (weather?.daily) {
       const { sunrise, sunset } = weather?.daily as daily;
-      const date = new Date();
-      const hour = date.getHours();
-      const sunriseHour = parseInt(sunrise[0].slice(11, 13));
-      const sunseteHour = parseInt(sunset[0].slice(11, 13));
-      if (hour > sunriseHour && hour < sunseteHour) {
+      const now = DateTime.now();
+      const sunriseHour = DateTime.fromISO(sunrise[0] as  string)
+      const sunsetHour = DateTime.fromISO(sunset[0] as  string)
+      if (now.toMillis() > sunriseHour.toMillis() && now.toMillis() < sunsetHour.toMillis()) {
         dispatch(setDay(true));
       } else {
         dispatch(setDay(false));

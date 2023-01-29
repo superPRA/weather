@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 export type result = {
   admin1: string;
   admin1_id: number;
@@ -51,10 +53,9 @@ export type daily = {
   sunrise: string[];
   sunset: string[];
   time: string[];
-  weathercode: number[]
-  apparent_temperature_max: number[]
-  apparent_temperature_min: number[]
-
+  weathercode: number[];
+  apparent_temperature_max: number[];
+  apparent_temperature_min: number[];
 };
 export type weather = {
   current_weather: currentWeather;
@@ -73,8 +74,8 @@ export type airPlution = {
   generationtime_ms: number;
   hourly: {
     time: string[];
-    uv_index: number;
-    uv_index_clear_sky: number[]
+    uv_index: number[];
+    uv_index_clear_sky: number[];
   };
   hourly_units: { [index: string]: string };
   latitude: number;
@@ -88,3 +89,26 @@ export type cityApiResponce = {
   generationtime_ms: number;
   results: results | null;
 };
+
+export type newsBBC = {
+  articles: {
+    source: {
+      id: string;
+      name: string;
+    };
+    author: string;
+    content: string
+    title: string;
+    description: string;
+    publishedAt:  string
+    url: string;
+    urlToImage: string;
+  }[];
+  status: string
+  totalResults: number
+};
+
+export type city = {
+  generationtime_ms: number
+  results: activeCity[]
+}

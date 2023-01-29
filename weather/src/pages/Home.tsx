@@ -20,7 +20,7 @@ export default function Home({}: Props) {
     </div>
   }
   return (
-    <div className="bg-[#191b1f] text-white lg:pl-[8rem] py-4 lg:pr-4">
+    <div className="dark:bg-[#191b1f] transition-all bg-neutral text-white lg:pl-[8rem] lg:pr-4">
       <SideNavbar />
       <Outlet />
     </div>

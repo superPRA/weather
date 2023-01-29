@@ -5,6 +5,7 @@ import { daily, weather } from "../../types/apiTypes";
 
 export default function useSunInfo() {
   const { weather } = useAppSelector((state) => state.apiResoponse);
+  const {isDay} = useAppSelector(state=>state.global)
   const sunrise = weather?.daily.sunrise ?? "";
   const sunset = weather?.daily.sunset ?? "";
   const sunriseTime = DateTime.fromISO(sunrise[0]);
@@ -17,7 +18,6 @@ export default function useSunInfo() {
   );
   const now = DateTime.now().day === sunriseTime.day?DateTime.now():DateTime.now().plus({day:1});
   // const now = DateTime.fromObject({ hour: 12, minute: 39 });
-  const isDay = now.hour > 6 && now.hour < 16 ? true : false;
   const dayRate =
     (now.toMillis() - sunriseTime.toMillis()) / (dayLength.toMillis());
   const nightRate =
@@ -34,7 +34,8 @@ export default function useSunInfo() {
   return {
     isDay,
     bottom: `${bottom - 12}px`,
-    left: `${left - 12}px`,bottom1: bottom,
+    left: `${left - 12}px`,
+    bottom1: bottom,
     dayRate,
     dayLength,
     sunriseTime,

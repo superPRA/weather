@@ -36,7 +36,7 @@ export default function WeatherIcons({ code }: props) {
       case 0:
       case 1:
       case 2:
-        return <WiDaySunny />;
+        return <WiDaySunny  />;
       case 3:
         return <WiDaySunnyOvercast />;
       case 45:
