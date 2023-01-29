@@ -172,7 +172,7 @@ export default function Credit({}: Props) {
       </div>
       <div className="bg-black px-8 py-12 flex justify-start items-center gap-4">
         <BsGithub />
-        <Link to="https://github.com/superPRA/weather" className="hover:underline">github</Link>
+        <Link to="/https://github.com/superPRA/weather" className="hover:underline">github</Link>
       </div>
     </div>
   );
