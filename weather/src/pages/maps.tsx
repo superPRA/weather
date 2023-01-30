@@ -54,6 +54,7 @@ function UseMap({
     },
     locationfound: (e) => {
       map.flyTo(e.latlng);
+      setCenter(e.latlng)
       setLocate("stop")
     },
   });
@@ -73,13 +74,13 @@ export default function Maps() {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="h-screen py-4">
-      <div className="w-full h-full rounded-3xl relative">
+    <div className="md:h-screen h-[calc(100vh-4.5rem)] py-4">
+      <div className="w-full h-full md:rounded-3xl relative">
         <MapContainer
           center={center as any}
           zoom={13}
           scrollWheelZoom={false}
-          className="h-full rounded-3xl"
+          className="h-full md:rounded-3xl"
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

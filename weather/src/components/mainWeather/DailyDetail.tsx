@@ -31,7 +31,7 @@ export default function DailyDetail({}: Props) {
   };
   const date = DateTime.now();
   return (
-    <div className="bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40 rounded-2xl my-8 mx-12">
+    <div className="bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40 rounded-2xl my-8 ">
       <div className="flex mx-2 px-8">
         <table className="w-full">
           <tbody>

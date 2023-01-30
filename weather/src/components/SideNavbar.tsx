@@ -55,13 +55,13 @@ export default function SideNavbar({}: Props) {
   const { theme } = useAppSelector((state) => state.global);
 
   return (
-    <div className="lg:top-0 lg:my-4 transition-all md:rounded-3xl z-20 bg-opacity-10 backdrop-blur-sm lg:bg-box-light lg:dark:bg-box-dark bg-cover sticky bg-center lg:fixed md:top-2 md:mx-4 lg:w-20 lg:h-[calc(100vh-3rem)] md:left-2 top-0 left-0">
+    <div className="lg:top-0 lg:my-4 transition-all md:rounded-3xl bg-neutral z-[400] lg:bg-box-light lg:dark:bg-box-dark bg-cover sticky bg-center lg:fixed md:top-2 md:mx-4 lg:w-20 lg:h-[calc(100vh-3rem)] md:left-2 top-0 left-0">
       <div className="backdrop-blur-md h-full text-white text-center relative  flex flex-row px-3 lg:px-0 lg:flex-col md:rounded-3xl ">
         <div className="flex lg:flex-col flex-grow">
           <Logo />
           <Nav />
           <button
-            className=" btn btn-outline text-white border-none hover:bg-transparent text-5xl my-3 sm:hidden ml-auto"
+            className=" btn btn-outline focus:text-white text-white border-none hover:bg-transparent text-5xl my-3 sm:hidden ml-auto"
             onClick={() => setDrawer(!drawer)}
           >
             <BiMenu />
@@ -72,7 +72,7 @@ export default function SideNavbar({}: Props) {
       <div
         className={`${
           !drawer ? "h-0" : "h-[450px]"
-        } overflow-clip transition-all bg-neutral w-full left-0 flex flex-col px-8 z-[400]  drop-shadow-lg`}
+        } overflow-clip transition-all bg-neutral w-full left-0 flex flex-col px-8 z-[400] drop-shadow-lg`}
       >
         <div className="border-b border-dashed">
           {icons.map((item) => {
@@ -81,7 +81,7 @@ export default function SideNavbar({}: Props) {
                 key={uuid()}
                 className={({ isActive }) => {
                   return isActive
-                    ? "text-3xl text-primary h-10 my-2 transition-all duration-300 flex justify-between items center"
+                    ? "text-3xl text-primary h-10 my-2 transition-all duration-300 flex justify-between items center "
                     : "text-xl h-10 my-2 text-neutral-400 transition-all duration-300 flex justify-between items-center";
                 }}
                 to={item.to}

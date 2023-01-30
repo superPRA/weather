@@ -20,7 +20,7 @@ export default function MainWeather({}: Props) {
       <div className="BOX ">
         <div className="py-4 ">
           <MainWeatherInfoHeader />
-          <main>
+          <main className="md:px-12 px-2">
             <HourlyDetail />
             <TodayAndTomorrow />
             <DailyDetail />

@@ -12,14 +12,14 @@ type Props = {};
 export default function HourlyDetail({}: Props) {
   const { weather } = useAppSelector((state) => state.apiResoponse);
   const date = DateTime.now();
-  const array = new Array(24).fill(1);
+  const array = new Array(weather?.hourly.apparent_temperature.length).fill(1);
   const data = array.map((item, index) => {
     return {
       a: weather?.hourly.apparent_temperature[index],
     };
   });
   return (
-    <div className="flex overflow-x-hidden px-4 my-8 mx-12 dark:bg-black dark:bg-opacity-40 bg-white rounded-3xl bg-opacity-40">
+    <div className="flex overflow-x-hidden px-4 my-8 dark:bg-black dark:bg-opacity-40 bg-white rounded-3xl bg-opacity-40">
       
       <Swiper
         spaceBetween={2}
@@ -27,7 +27,7 @@ export default function HourlyDetail({}: Props) {
       >
         {array.map((item, index) => {
                 return (
-                  <SwiperSlide className="text-center mx-6 text-4xl flex flex-col items-center py-4 select-none" key={uuid()}>
+                  <SwiperSlide className="text-center mx-12 text-4xl flex flex-col items-center py-4 select-none" key={uuid()}>
                     <h6 className="text-lg">
                       {
                         DateTime.fromISO(

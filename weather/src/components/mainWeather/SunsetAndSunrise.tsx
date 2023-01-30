@@ -8,7 +8,7 @@ type Props = {};
 export default function SunsetAndSunrise({}: Props) {
     const { weather } = useAppSelector(state=>state.apiResoponse)
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 gap-10 px-12">
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
       <div className="col-span-1 bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40 rounded-2xl flex justify-center items-center text-center px-5">
         <h2 className="text-2xl font-bold">Sunrise :</h2>
         <h1 className="text-2xl px-1 mx-4">
