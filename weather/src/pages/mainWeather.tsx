@@ -11,25 +11,31 @@ import TodayAndTomorrow from "../components/mainWeather/TodayAndTomorrow";
 import SunsetAndSunrise from "../components/mainWeather/SunsetAndSunrise";
 import UHW from "../components/mainWeather/UHW";
 import Headlines from "../components/mainWeather/Headlines";
+import { Helmet } from "react-helmet-async";
 type Props = {};
 
 export default function MainWeather({}: Props) {
   const { weather } = useAppSelector((state) => state.apiResoponse);
   return (
-    <div className="py-4">
-      <div className="BOX ">
-        <div className="py-4 ">
-          <MainWeatherInfoHeader />
-          <main className="md:px-12 px-2">
-            <HourlyDetail />
-            <TodayAndTomorrow />
-            <DailyDetail />
-            <SunsetAndSunrise />
-            <UHW />
-            <Headlines />
-          </main>
+    <>
+    <Helmet>
+      <title>main</title>
+    </Helmet>
+      <div className="py-4">
+        <div className="BOX ">
+          <div className="py-4 ">
+            <MainWeatherInfoHeader />
+            <main className="md:px-12 px-2">
+              <HourlyDetail />
+              <TodayAndTomorrow />
+              <DailyDetail />
+              <SunsetAndSunrise />
+              <UHW />
+              <Headlines />
+            </main>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

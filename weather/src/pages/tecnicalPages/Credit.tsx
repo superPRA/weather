@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { changeTheme } from "../../redux/global/global";
 import { BsGithub, BsMoon, BsSun } from "react-icons/bs";
 import { SiLeaflet, SiRedux } from "react-icons/si";
+import { Helmet } from "react-helmet-async";
 
 type Props = {};
 
@@ -116,64 +117,74 @@ export default function Credit({}: Props) {
     },
   ];
   return (
-    <div className="snap-y bg-zinc-800 text-white relative">
-      <label className="swap swap-rotate absolute top-10 right-10 btn btn-square btn-warning dark:btn-active dark:text-white">
-        <input
-          type="checkbox"
-          onChange={(e) =>
-            e.target.checked
-              ? dispatch(changeTheme("light"))
-              : dispatch(changeTheme("dark"))
-          }
-          checked={theme === "light"}
-        />
-        <BsSun className="swap-on " />
-        <BsMoon className="swap-off" />
-      </label>
-      <div className="h-screen bg-primary flex justify-center items-center snap-center">
-        <div className="text-center">
-          <div className="avatar">
-            <div className="w-48 rounded-full1 mask mask-squircle">
-              <img src={myImg} />
-            </div>
-          </div>
-          <h1 className="text-4xl mt-8">Pooriya Mosavi</h1>
-          <div className="flex gap-20 mt-8">
-            <Link to="/home" className="btn-secondary btn">
-              visit the site
-            </Link>
-            <Link to="/contactme" className="btn ">
-              contact me
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="grid grid-cols-12 max-w-7xl mx-auto py-20 gap-8 snap-start">
-        <h1 className="col-span-12 text-center text-5xl mb-8">
-          silence features
-        </h1>
-        {list.map(({ describtion, img, title, color }) => {
-          return (
-            <div className="md:col-span-4 col-span-12 h-80 bg-primary flex justify-center items-center p-4 pt-8 rounded-xl">
-              <div className="flex flex-col items-center justify-between h-full ">
-                <div className="avatar">
-                  <div
-                    className={`w-24 rounded-full ring ring-white ring-offset-base-100 ring-offset-2 text-8xl bg-neutral-focus flex justify-center items-center ${color}`}
-                  >
-                    {img}
-                  </div>
-                </div>
-                <h1 className="text-center text-4xl">{title}</h1>
-                <p className="text-center">{describtion}</p>
+    <>
+    <Helmet>
+      <title>credit</title>
+    </Helmet>
+      <div className="snap-y bg-zinc-800 text-white relative">
+        <label className="swap swap-rotate absolute top-10 right-10 btn btn-square btn-warning dark:btn-active dark:text-white">
+          <input
+            type="checkbox"
+            onChange={(e) =>
+              e.target.checked
+                ? dispatch(changeTheme("light"))
+                : dispatch(changeTheme("dark"))
+            }
+            checked={theme === "light"}
+          />
+          <BsSun className="swap-on " />
+          <BsMoon className="swap-off" />
+        </label>
+        <div className="h-screen bg-primary flex justify-center items-center snap-center">
+          <div className="text-center">
+            <div className="avatar">
+              <div className="w-48 rounded-full1 mask mask-squircle">
+                <img src={myImg} />
               </div>
             </div>
-          );
-        })}
+            <h1 className="text-4xl mt-8">Pooriya Mosavi</h1>
+            <div className="flex gap-20 mt-8">
+              <Link to="/home" className="btn-secondary btn">
+                visit the site
+              </Link>
+              <Link to="/contactme" className="btn ">
+                contact me
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-12 max-w-7xl mx-auto py-20 gap-8 snap-start">
+          <h1 className="col-span-12 text-center text-5xl mb-8">
+            silence features
+          </h1>
+          {list.map(({ describtion, img, title, color }) => {
+            return (
+              <div className="md:col-span-4 col-span-12 h-80 bg-primary flex justify-center items-center p-4 pt-8 rounded-xl">
+                <div className="flex flex-col items-center justify-between h-full ">
+                  <div className="avatar">
+                    <div
+                      className={`w-24 rounded-full ring ring-white ring-offset-base-100 ring-offset-2 text-8xl bg-neutral-focus flex justify-center items-center ${color}`}
+                    >
+                      {img}
+                    </div>
+                  </div>
+                  <h1 className="text-center text-4xl">{title}</h1>
+                  <p className="text-center">{describtion}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="bg-black px-8 py-12 flex justify-start items-center gap-4">
+          <BsGithub />
+          <a
+            href="https://github.com/superPRA/weather"
+            className="hover:underline"
+          >
+            github
+          </a>
+        </div>
       </div>
-      <div className="bg-black px-8 py-12 flex justify-start items-center gap-4">
-        <BsGithub />
-        <a href="https://github.com/superPRA/weather" className="hover:underline">github</a>
-      </div>
-    </div>
+    </>
   );
 }

@@ -6,6 +6,7 @@ import useGetCity from "../hooks/axios/useGetCity";
 import uuid from "react-uuid";
 import { changeActiveCity } from "../redux/API/APIResponses";
 import { changeTheme } from "../redux/global/global";
+import { Helmet } from "react-helmet-async";
 
 type Props = {};
 
@@ -14,6 +15,12 @@ export default function Setting({}: Props) {
   const [citySearch, setCitySearch] = useState("");
   const { error, loading, response } = useGetCity(citySearch);
   return (
+    <>
+    <Helmet>
+      <title>
+        setting
+      </title>
+    </Helmet>
     <div className="h-screen">
       <div className="flex justify-between items-center p-12 border-dashed border-b">
         <div className="dropdown dropdown-right">
@@ -107,5 +114,7 @@ export default function Setting({}: Props) {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }

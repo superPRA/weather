@@ -21,7 +21,6 @@ const icons = [
     to: "/home",
     name: "home",
   },
-
   {
     icon: <GiCircleClaws />,
     to: "/mainWeather",
@@ -31,11 +30,6 @@ const icons = [
     icon: <RiMap2Line />,
     to: "/map",
     name: "map",
-  },
-  {
-    icon: <IoLocationOutline />,
-    to: "/location",
-    name: "location",
   },
   {
     icon: <RxCalendar />,
@@ -55,7 +49,7 @@ export default function SideNavbar({}: Props) {
   const { theme } = useAppSelector((state) => state.global);
 
   return (
-    <div className="lg:top-0 lg:my-4 transition-all md:rounded-3xl bg-neutral z-[400] lg:bg-box-light lg:dark:bg-box-dark bg-cover sticky bg-center lg:fixed md:top-2 md:mx-4 lg:w-20 lg:h-[calc(100vh-3rem)] md:left-2 top-0 left-0">
+    <div className="lg:top-0 lg:my-4 transition-all md:rounded-3xl bg-neutral lg:bg-box-light lg:dark:bg-box-dark bg-cover sticky bg-center lg:fixed md:top-2 md:mx-4 lg:w-20 lg:h-[calc(100vh-3rem)] md:left-2 top-0 left-0">
       <div className="backdrop-blur-md h-full text-white text-center relative  flex flex-row px-3 lg:px-0 lg:flex-col md:rounded-3xl ">
         <div className="flex lg:flex-col flex-grow">
           <Logo />
@@ -72,7 +66,7 @@ export default function SideNavbar({}: Props) {
       <div
         className={`${
           !drawer ? "h-0" : "h-[450px]"
-        } overflow-clip transition-all bg-neutral w-full left-0 flex flex-col px-8 z-[400] drop-shadow-lg`}
+        } overflow-clip transition-all bg-neutral w-full left-0 flex flex-col px-8 drop-shadow-lg`}
       >
         <div className="border-b border-dashed">
           {icons.map((item) => {

@@ -26,10 +26,6 @@ const icons = [
     to: "/map",
   },
   {
-    icon: <IoLocationOutline />,
-    to: "/location",
-  },
-  {
     icon: <RxCalendar />,
     to: "/calender",
   },

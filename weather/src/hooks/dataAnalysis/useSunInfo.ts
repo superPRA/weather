@@ -16,7 +16,7 @@ export default function useSunInfo() {
   const nightLength = DateTime.fromMillis(
     24 * 60 * 60 * 1000 - dayLength.toMillis()
   );
-  const now = DateTime.now().day === sunriseTime.day?DateTime.now():DateTime.now().plus({day:1});
+  const now = DateTime.now().day === sunriseTime.day?DateTime.now():DateTime.now().minus({day:1});
   // const now = DateTime.fromObject({ hour: 12, minute: 39 });
   const dayRate =
     (now.toMillis() - sunriseTime.toMillis()) / (dayLength.toMillis());
